@@ -1,0 +1,6 @@
+- job:
+    name: test-job
+    publishers:
+      - artifactdeployer: 
+          includes: 'buddy-*.tar.gz'
+          remote: '/project/buddy'
