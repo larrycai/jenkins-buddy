@@ -10,13 +10,17 @@ Jenkins buddy to create jenkins easily, require [jenkins-job-builder](http://ci.
 	# or later
 	$ pip install jenkins-buddy (not ready)	
 	
-### Features ###
+## Features ##
 
 Planned to support more modules (a.k.a jenkins plugins) which are not supported as default and create view/slave nodes 
 
-#### Some new modules ####
+### Some new modules ###
 
-* [ArtifactDeployer Plugin](https://wiki.jenkins-ci.org/display/JENKINS/ArtifactDeployer+Plugin)
+#### ArtifactDeployer Plugin ####
+
+[ArtifactDeployer Plugin](https://wiki.jenkins-ci.org/display/JENKINS/ArtifactDeployer+Plugin) is the popular plugin to deploy the artifacts to other folder
+
+`.YAML` format
 
     publishers:
       - artifactdeployer: 
