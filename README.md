@@ -27,7 +27,23 @@ Planned to support more modules (a.k.a jenkins plugins) which are not supported 
           includes: 'buddy-*.tar.gz'
           remote: '/project/buddy'
 
+    $ jenkins-job test job.yaml -o
+
 #### Create View ####
+
+The view can be automatically created/deleted now
+
+Create views and add jobs into the view
+
+    - views:
+      name: product-abc-view
+      jobs:
+          - 'master-build-job'
+          - 'master-deploy-job'
+          - 'master-start-job'
+
+	$ jenkins-buddy update-view view.yaml
+	$ jenkins-buddy delete-view view.yaml
 
 #### Create Slave Node ####
 
@@ -39,3 +55,7 @@ Debug it locally
 	$ jenkins-jobs -l debug test job.yaml -o .
 
 How to extend the modules: http://ci.openstack.org/jenkins-job-builder/extending.html#component-interface
+
+### For view featurs ###
+
+[jenkinsapi](https://github.com/salimfadhley/jenkinsapi/) is used instead of [python-jenkins](http://pythonhosted.org/python-jenkins/), since the latter doesn't has the API.

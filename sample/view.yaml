@@ -1,0 +1,24 @@
+- job-template:
+    name: '{name}-build-job'
+
+- job-template:
+    name: '{name}-deploy-job'
+
+- job-template:
+    name: '{name}-start-job'
+
+- project:
+    name: 'master'
+    jobs:
+      - '{name}-build-job'
+      - '{name}-deploy-job'
+      - '{name}-start-job'
+
+- views:
+    name: product-abc-view
+    jobs:
+      - 'master-build-job'
+      - 'master-deploy-job'
+      - 'master-start-job'
+    type: nested-view
+
